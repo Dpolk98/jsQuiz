@@ -1,0 +1,14 @@
+.header {
+    background-color: #5E00D1;
+    color: #14E3C1;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.answers {
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 1rem;
+}
+
