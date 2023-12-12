@@ -101,7 +101,7 @@ function startTime() {
 
 startBtn.addEventListener("click", startQuiz);
 
-unction showQuestion() {
+function showQuestion() {
     document.getElementById("choices").textContent = "";
     if (counter == multiChoice.length) {
       endQuiz();

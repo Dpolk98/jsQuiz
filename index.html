@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <title>Quiz</title>
-</head>
-<body>
-    <header class="header" id="header">
-        <div class="highScore">
-            High Score
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="Assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+  <header>
+    <div id="scoreLink"class="highscore"style="float: left; margin-top: -170px; margin-left: 20px">View high scores</div>
+    <div
+      style="
+        float: right;
+        margin-right: 40px;
+        font-size: 20px;
+        margin-top: -165px;
+      "
+    >
+      Time Remaining: <span id="countdown">5:00</span>
+    </div>
+    <h1 id="heading">
+      Coding Quiz Challange
+    </h1>
+  </header>
+  
+    <main>
+      <p id="subHeading">
+        Try to answer the code-related questions within the time limit. Keep in
+        mind that incorrect answers will penalize your score/time by 10 seconds!
+      </p>
+      <button type="button" id="startBtn">Start Quiz</button>
+      <div id="questions" class="hide">
+        <p id="questionTitle"></p>
+        <div id="choices"></div>
+        <span id="result"> </span>
+        <div>
+          <div id="yourScore" class="hide"></div>
+          <input type="text" id="initals" class="hide" placeholder="Type Initals Here"></input>
+          <p id="highscore"></p>
         </div>
+      </main>
+      <footer>
+    <div  id="endPage" class="hide">
 
-        <div class="timeLeft" id="timeLeft">
-            Time Left
-        </div>
-    </header>
-    <main class="quiz">
-        <div class="question" id="question">
+     <h1 id="leaderboard">Leaderboard</h1>
+    <ul id="highscores">HighScores</ul>
+    </div>
 
-        </div>
-        
-        <ol class="answers">
-            <li class="answers"></li>
-            <li class="answers"></li>
-            <li class="answers"></li>
-            <li class="answers"></li>
-        </ol>
-    </main>
-</body>
-<script src="Assets/script.js"></script>
+    <button type="button" id="clear">Clear Leaderboard</button>
+    <div id="homepage" class="hide"><a href="index.html">Back to homepage</a></div>
+    </footer>
+    <script src="Assets/js/script.js"></script>
+  </body>
 </html>
