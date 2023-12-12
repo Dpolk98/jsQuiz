@@ -88,6 +88,70 @@ var multiChoice = [
   },
 ];
 
+function startTime() {
+    var minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    countdown.innerHTML = `${minutes} : ${seconds}`;
+    time--;
+    if (time < 0) {
+        clearInterval(timerEnd);
+    }
+}
+
+startBtn.addEventListener("click", startQuiz);
+
+unction showQuestion() {
+    document.getElementById("choices").textContent = "";
+    if (counter == multiChoice.length) {
+      endQuiz();
+      return;
+    }
+  
+    var questions = document.getElementById("questions");
+    questions.classList.remove("hide");
+    var currentQuestion = multiChoice[counter];
+    questions.classList.add("show");
+    var questionsTitle = document.getElementById("questionTitle");
+    questionsTitle.innerHTML = currentQuestion.title;
+  
+    for (let i = 0; i < currentQuestion.choices.length; i++) {
+      var currentChoice = currentQuestion.choices[i];
+      var button = document.createElement("button");
+      button.innerText = currentChoice;
+      button.setAttribute("class", "options");
+  
+      document.getElementById("choices").appendChild(button);
+  
+      button.addEventListener("click", function (event) {
+        var buttonResult = event.target.innerText;
+  
+        if (buttonResult === currentQuestion.correctA) {
+          setTimeout(() => {
+            result.textContent = " Correct";
+          }, 50);
+          score++;
+          setTimeout(() => {
+            result.textContent = "";
+          }, 700);
+        } else {
+          setTimeout(() => {
+            result.textContent = "Incorrect";
+          }, 50);
+          setTimeout(() => {
+            result.textContent = "";
+          }, 700);
+  
+          time = time - 10;
+        }
+        setTimeout(() => {
+          counter++;
+          showQuestion();
+        }, 450);
+      });
+    }
+  }
+  
 
 answerButtonEl.on ('click', function(){
     questionEl.html(`${question1}`);
