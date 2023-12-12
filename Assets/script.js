@@ -1,7 +1,19 @@
-var answerButtonEl = $('li');
-var timeLeftEl = $("#timeLeft")
-var testEl = $('#test')
-var questionEl = $('#question');
+var startBtn = document.querySelector("#startBtn");
+var heading = document.querySelector("#heading");
+var subHeading = document.querySelector("#subHeading");
+var countdown = document.getElementById("countdown");
+var result = document.getElementById("result");
+var initals = document.getElementById("initals");
+var points = document.getElementById("points");
+var highScoreEl = document.getElementById("highscores");
+var leaderboardEl = document.getElementById("leaderboard");
+var yourScore = document.getElementById("yourScore");
+var scoreLink = document.getElementById("scoreLink");
+var button = document.createElement("button");
+var endPage = document.getElementById("endPage");
+var counter = 0;
+var score = 0;
+var timerEnd;
 
 const questionList = ["What is the correct syntax for referring to an external script called 'example.js'?", ]
 const answerList = [""]
